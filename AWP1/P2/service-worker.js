@@ -59,9 +59,22 @@ event.waitUntil(self.registration.showNotification(tiitle, options));
 })
 
 //Manejamos peticiones
-self.addEventListener('fetch', (event)=>{
-    console.log('ServiceWork: Fetching');
-    event.respondWith(fetch(event.request).catch(() =>
-    caches.match(event.request))
+self.addEventListener('fetch', (event) => {
+    event.respondWith(
+        caches.match(event.request).then((response) => {
+            if (response) {
+                // La imagen está en caché, la servimos desde allí
+                return response;
+            } else {
+                // La imagen no está en caché, la solicitamos al servidor y la almacenamos en caché
+                return fetch(event.request).then((response) => {
+                    const clonedResponse = response.clone();
+                    caches.open(cacheName).then((cache) => {
+                        cache.put(event.request, clonedResponse);
+                    });
+                    return response;
+                });
+            }
+        })
     );
 });

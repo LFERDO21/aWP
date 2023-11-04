@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevStore P3</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <style>
+        .swiper-container {
+            max-height: 500px; /* Ajusta la altura a tu preferencia */
+            overflow: hidden; /* Oculta el desbordamiento */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ajusta la altura a la pantalla completa o según sea necesario */
+
+        }
+
+
+
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <div class="bg-blue-500 p-4">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-2xl font-semibold text-white mb-2 md:mb-0">DevStore</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="text-white">Home</a></li>
+                    <li class="relative group">
+                        <a href="#" class="text-white">Más de nosotros</a>
+                        <ul class="hidden absolute left-0 mt-2 space-y-2 bg-white border border-gray-200 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 shadow-md z-10">
+                            <li><a href="mision.html" class="block px-4 py-2 text-blue-500 hover:bg-blue-100">Misión</a></li>
+                            <li><a href="vision.html" class="block px-4 py-2 text-blue-500 hover:bg-blue-100">Visión</a></li>
+                            <li><a href="quienes_somos.html" class="block px-4 py-2 text-blue-500 hover:bg-blue-100">Quiénes somos</a></li>
+                            <li><a href="valores.html" class="block px-4 py-2 text-blue-500 hover.bg-blue-100">Valores</a></li>
+                        </ul>
+                    </li>
+                    <li class="relative group">
+                        <a href="#" class="text-white">Proyectos</a>
+                        <ul class="hidden absolute left-0 mt-2 space-y-2 bg-white border border-gray-200 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 shadow-md z-10">
+                            <li><a href="servicios_ofrecidos.html" class="block px-4 py-2 text-blue-500 hover:bg-blue-100">Servicios ofrecidos</a></li>
+                            <li><a href="portafolios.html" class="block px-4 py-2 text-blue-500 hover:bg-blue-100">Portafolios</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contacto.html" class="text-white">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="swiper-container w-full max-h-1/2 md:h-3/4 lg:h-1/2 m-2 relative">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="../img/10.jpg" alt="Imagen 1" class="w-full h-full object-cover">
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/11.jpg" alt="Imagen 1" class="w-full h-full object-cover">
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/12.jpg" alt="Imagen 2" class="w-full h-full object-cover">
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/13.jpg" alt="Imagen 3" class="w-full h-full object-cover">
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/14.jpg" alt="Imagen 3" class="w-full h-full object-cover">
+            </div>
+            <!-- Agrega más imágenes según tus necesidades -->
+        </div>
+        <!-- Agregar paginación -->
+        <div class="swiper-pagination"></div>
+    </div>
+        
+    <div class="container mx-auto p-4">
+        <div class="flex items-center"> <!-- Contenedor flex para alinear texto e imagen -->
+            <div class="md:w-1/2 p-4">
+                <h1 class="text-4xl font-bold text-blue-800 mb-4">Bienvenido a DevStore</h1>
+                <h2 class="text-2xl font-semibold text-blue-600 mb-2">Proyectos Personalizados</h2>
+                <p class="text-lg text-gray-700 leading-7">En DevStore, nos especializamos en crear proyectos personalizados que satisfacen las necesidades únicas de tu empresa. Nuestro enfoque en la renta, accesibilidad y calidad del servicio garantiza soluciones efectivas para tu negocio.</p>
+            </div>
+            
+            <div class="w-full md:w-1/2">
+                <img src="../img/15.png" alt="Descripción de la imagen" class="w-full h-auto">
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-blue-500 text-white text-center py-2">
+        <p>&copy; Luis Fernando Rivera Herrera. <strong>20307023</strong></p>
+        <div class="mt-2">
+            <a href="aviso_privacidad.html" class="text-white text-sm">Aviso de Privacidad</a>
+            <span class="mx-2">|</span>
+            <a href="politica_privacidad.html" class="text-white text-sm">Política de Privacidad</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                // Configuración de Swiper
+                loop: true,
+                autoplay: {
+                    delay: 6000,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
